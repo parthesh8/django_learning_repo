@@ -16,10 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from cost.views import cost
+from cost.views import cost, process_parameters_view
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('cost/', cost, name="cost"),
+    path('', cost, name="cost"),
+    path('process%parameters/', process_parameters_view, name="process%parameters"),
 ]
