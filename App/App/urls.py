@@ -21,5 +21,5 @@ from cost.views import cost
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', cost, name="cost"),
+    path('cost/', cost, name="cost"),
 ]
