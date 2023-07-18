@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 EXTERNAL_APPS = [
     'cost',
 ]
+INSTALLED_APPS = INSTALLED_APPS + EXTERNAL_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
