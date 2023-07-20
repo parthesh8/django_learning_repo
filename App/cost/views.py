@@ -9,13 +9,11 @@ def cost(request):
 
 def process_parameters_view(request):
     gps_status = request.POST.get('gps_status')
-    mark_in_date = request.POST.get('mark_in_date')
     mark_in_time = request.POST.get('mark_in_time')
-    mark_out_date = request.POST.get('mark_out_date')
     mark_out_time = request.POST.get('mark_out_time')
-    mark_in_datetime = datetime.strptime('{} {}'.format(mark_in_date, mark_in_time), '%Y-%m-%d %H:%M')
-    mark_out_datetime = datetime.strptime('{} {}'.format(mark_out_date, mark_out_time), '%Y-%m-%d %H:%M')
-    time_difference = mark_out_datetime - mark_in_datetime
+    mark_in_time = datetime.strptime(mark_in_time, '%Y-%m-%dT%H:%M')
+    mark_out_time = datetime.strptime(mark_out_time, '%Y-%m-%dT%H:%M')
+    time_difference = mark_out_time - mark_in_time
     gps_status = gps_status.lower()
 
     if time_difference > timedelta(days=6) and gps_status == "no":

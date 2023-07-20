@@ -8,7 +8,7 @@
 <body>
   <h1>Enter Parameters</h1>
 
-  <form action="process%parameters">
+  <form method="post" action="process_parameters/">
     {% csrf_token %}
 
     <label for="gps_status">GPS Status:</label>
@@ -16,13 +16,11 @@
     <br>
 
     <label for="mark_in_time">Mark In Time:</label>
-    <input type="date" name="mark_in_date" id="mark_in_date" required>
-    <input type="time" name="mark_in_time" id="mark_in_time" required>
+    <input type="datetime-local" name="mark_in_time" id="mark_in_time" required>
     <br>
 
     <label for="mark_out_time">Mark Out Time:</label>
-    <input type="date" name="mark_out_date" id="mark_out_date" required>
-    <input type="time" name="mark_out_time" id="mark_out_time" required>
+    <input type="datetime-local" name="mark_out_time" id="mark_out_time" required>
     <br>
 
     <input type="submit">

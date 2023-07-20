@@ -18,9 +18,8 @@ from django.contrib import admin
 from django.urls import path
 from cost.views import cost, process_parameters_view
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', cost, name="cost"),
-    path('process%parameters/', process_parameters_view, name="process%parameters"),
+    path('process_parameters/', process_parameters_view, name='process_parameters_view'),
 ]
