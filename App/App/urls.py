@@ -17,9 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from cost.views import cost, process_parameters_view
+from home.views import homepage
 
 urlpatterns = [
+    path('', homepage, name="homepage"),
     path('admin/', admin.site.urls),
-    path('', cost, name="cost"),
+    path('cost_calc/', cost, name="cost"),
     path('process_parameters/', process_parameters_view, name='process_parameters_view'),
 ]
